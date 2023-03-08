@@ -1,0 +1,139 @@
+:root {
+  --black: #161619;
+  --gray-900: #1c1c1d;
+  --gray-700: #3d3d3e;
+  --gray-500: #737373;
+  --light: #fbfef9;
+  --primary: #58a4b0;
+  --secondary: #f6ae2d;
+  --tertiary: #9046cf;
+  --success: #aceca1;
+  --danger: #ffc6d9;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Rubik", sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--black);
+  color: var(--light);
+
+  display: flex;
+  gap: 16px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.board {
+  padding: 16px;
+  background-color: var(--gray-900);
+  flex: 1;
+  overflow: hidden;
+}
+
+.board h3 {
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.board-todo h3 {
+  color: var(--danger);
+}
+
+.board-process h3 {
+  color: var(--secondary);
+}
+
+.board-finished h3 {
+  color: var(--success);
+}
+
+.board .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  min-height: 150px;
+  flex: 0 0 calc(50% - 4px);
+  position: relative;
+
+  background-color: var(--gray-500);
+  color: var(--light);
+
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.board .card::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 16px;
+  right: 16px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.board-todo .card::after {
+  background-color: var(--danger);
+}
+
+.board-process .card::after {
+  background-color: var(--secondary);
+}
+
+.board-finished .card::after {
+  background-color: var(--success);
+}
+
+.dragging {
+  cursor: move;
+}
+
+.droppable {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: flex-start;
+
+  gap: 8px;
+  transition: background-color 0.3s, opacity 0.3s;
+  -webkit-transition: background-color 0.3s, opacity 0.3s;
+  -moz-transition: background-color 0.3s, opacity 0.3s;
+  -ms-transition: background-color 0.3s, opacity 0.3s;
+  -o-transition: background-color 0.3s, opacity 0.3s;
+}
+
+.droppable.highlight {
+  background-color: var(--gray-700);
+}
+
+.droppable.selected {
+  background-color: var(--success);
+  opacity: 0.5;
+}
