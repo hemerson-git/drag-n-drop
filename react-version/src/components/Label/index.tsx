@@ -3,5 +3,12 @@ type Props = {
 };
 
 export function Label({ color }: Props) {
-  return <span>Going</span>;
+  return (
+    <span
+      className={`w-[10px] h-[10px] rounded-sm inline-block`}
+      style={{
+        background: color,
+      }}
+    ></span>
+  );
 }

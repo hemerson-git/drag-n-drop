@@ -16,6 +16,14 @@ module.exports = {
         theme: {
           500: "#7159c1",
         },
+
+        themeBlue: {
+          500: "#3b5bfd",
+        },
+      },
+
+      boxShadow: {
+        theme: "0 1px 4px 0 rgba(192, 208, 230, .8)",
       },
     },
   },
